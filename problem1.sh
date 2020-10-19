@@ -1,17 +1,16 @@
 
 #! /bin/bash -x
-dice1=$((RANDOM%7 +1))
-dice2=$((RANDOM%7 +1))
 sum=0
 count=0
-while(1)
+while(true)
 do
-if [ $dice1==6 -a $dice2==6 ]
-then
-break
-else
+dice1=$((RANDOM%7 +1))
+dice2=$((RANDOM%7 +1))
 count=$((count+1))
 sum=$((sum+dice1+dice2))
+if [ $dice1 -eq 6 -a $dice2 -eq 6 ]
+then
+break
 fi
 done
 echo $sum
